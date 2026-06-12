@@ -6,10 +6,18 @@ It works **without touching the game `.exe`** (the Steam build is SteamStub-prot
 
 ## Install
 
-1. You need an **ASI loader** in the game's `Engine` folder. The easiest one ships with [ThirteenAG's WidescreenFix](https://thirteenag.github.io/wfp) for this game (`dinput8.dll` = Ultimate ASI Loader).
-2. Drop **`Sprint.asi`** and **`Sprint.ini`** into:
-   `...\steamapps\common\Call of Cthulhu\Engine\scripts\`
-3. Launch the game. Press your sprint key.
+### Easiest — one-click (recommended)
+1. Download **`Sprint-mod.zip`** from the [Releases](https://github.com/smlfxxy/coc-dcote-sprint/releases) page.
+2. Extract it **into your game folder**: `...\Steam\steamapps\common\Call of Cthulhu\`
+   (the files drop into `Engine\` and `Engine\scripts\` automatically — "Replace" if asked).
+3. Launch the game. Press **CapsLock** to toggle sprint. Done.
+
+That's it. The zip already includes the ASI loader (`dinput8.dll`).
+
+### Manual (if you already mod this game)
+If you already use WidescreenFix / another ASI mod, you already have the loader
+(`Engine\dinput8.dll`) — **don't overwrite it**. Just copy **`Sprint.asi`** and
+**`Sprint.ini`** into `Engine\scripts\` and launch.
 
 ## Configuration — `Sprint.ini`
 
