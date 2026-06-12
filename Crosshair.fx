@@ -39,6 +39,16 @@ uniform float3 Color <
     ui_label = "Color";
 > = float3(1.0, 1.0, 1.0);
 
+uniform float OffsetX <
+    ui_type = "slider"; ui_min = -300.0; ui_max = 300.0; ui_step = 1.0;
+    ui_label = "Horizontal offset (px, + = right)";
+> = 0.0;
+
+uniform float OffsetY <
+    ui_type = "slider"; ui_min = -300.0; ui_max = 300.0; ui_step = 1.0;
+    ui_label = "Vertical offset (px, + = up)";
+> = 0.0;
+
 float3 PS_Crosshair(float4 vpos : SV_Position, float2 uv : TEXCOORD) : SV_Target
 {
     float3 col = tex2D(ReShade::BackBuffer, uv).rgb;
@@ -47,7 +57,7 @@ float3 PS_Crosshair(float4 vpos : SV_Position, float2 uv : TEXCOORD) : SV_Target
         return col;
 
     float2 px = uv * ReShade::ScreenSize;
-    float2 c  = ReShade::ScreenSize * 0.5;
+    float2 c  = ReShade::ScreenSize * 0.5 + float2(OffsetX, -OffsetY);
     float2 d  = abs(px - c);
 
     float mask = 0.0;
