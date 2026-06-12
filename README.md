@@ -56,6 +56,24 @@ cl /LD /O2 /MT Sprint.cpp /Fe:Sprint.asi user32.lib
 ```
 Adjust the Visual Studio path inside `build.bat` to match your install.
 
+## Bonus: Crosshair (optional, needs ReShade)
+
+The game has no crosshair. [`Crosshair.fx`](Crosshair.fx) is a tiny ReShade shader
+that draws a centered, semi-transparent **aim dot** (Max-Payne style) with a
+**built-in toggle key** — no need to fiddle with ReShade hotkey bindings.
+
+**Install:**
+1. You need [ReShade](https://reshade.me) installed for the game.
+2. Drop `Crosshair.fx` into `...\Engine\reshade-shaders\Shaders\`.
+3. In the ReShade overlay (Home) enable **"Crosshair (center aim dot)"**
+   (if "Skip loading disabled effects" is on, click **Force load all effects** first to see it).
+4. Press **X** in-game to toggle it. Adjust size / opacity / color / shape in the overlay.
+
+Change the toggle key by editing `keycode = 0x58` (X) in `Crosshair.fx` and reloading.
+
+> Note: aim point is screen-center. In DCotE hits are tied to the weapon/camera,
+> so the dot is a close hip-fire reference, not pixel-perfect — good enough in practice.
+
 ## Credits & license
 
 Made for the community as part of a full DCotE setup guide.
